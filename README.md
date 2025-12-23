@@ -164,20 +164,23 @@ curl -L [https://install.pivpn.io](https://install.pivpn.io) | bash
 
 ---
 
-## 📡 Router / Modem Configuration (Essential)
+## 📡 Router / Modem Configuration (Required)
 
-Even if you install everything correctly, it won't work automatically unless you configure your Router.
+Even if all components are installed correctly, the system will not function unless the router is properly configured.
 
-1. **Login:** Go to your Router's interface (usually `192.168.1.1` or `192.168.0.1`).
-2. **LAN / DHCP Settings:** Find the "DHCP Server" settings (NOT the WAN/Internet settings).
+1. **Login:** Access your router’s management interface (commonly `192.168.1.1` or `192.168.0.1`).
+
+2. **LAN / DHCP Settings:** Locate the **DHCP Server** settings under LAN (do **not** use the WAN/Internet section).
+
 3. **DNS Assignment:** You will see fields for Primary and Secondary DNS.
-* **Primary DNS:** Enter your Raspberry Pi's Static IP (e.g., `192.168.1.100`).
-* **Secondary DNS:** Leave blank or enter the Pi's IP again. **DO NOT** enter Google (8.8.8.8) here, or ads will sneak through.
 
+   * **Primary DNS:** Enter the static IP address of your Raspberry Pi (e.g., `192.168.1.100`).
+   * **Secondary DNS:** Leave it empty or enter the same Raspberry Pi IP address. **Do not** use public DNS servers such as Google (`8.8.8.8`), otherwise ads and unwanted traffic may bypass the filter.
 
-4. **Save & Reboot:** Restart your router to force all devices to get the new DNS settings.
+4. **Save & Reboot:** Restart the router to ensure all connected devices receive the updated DNS settings.
 
 ---
+
 
 ## 📱 How to Connect Clients (VPN)
 
@@ -372,20 +375,23 @@ curl -L [https://install.pivpn.io](https://install.pivpn.io) | bash
 
 ---
 
-## 📡 Modem / Router Ayarları (Zorunlu)
+## 📡 Router / Modem Yapılandırması (Zorunlu)
 
-Her şeyi doğru kursanız bile modeminize bu sunucuyu tanıtmazsanız sistem çalışmaz.
+Her şeyi doğru şekilde kursanız bile, router yapılandırması yapılmadığı sürece sistem otomatik olarak çalışmaz.
 
-1. **Giriş:** Modem arayüzüne (Genelde `192.168.1.1`) girin.
-2. **LAN / DHCP Ayarları:** "Yerel Ağ" veya "DHCP Sunucusu" ayarlarını bulun (WAN/İnternet ayarlarını DEĞİL).
-3. **DNS Atama:** Birincil ve İkincil DNS kutularını göreceksiniz.
-* **1. DNS:** Raspberry Pi'nin Statik IP adresini yazın (Örn: `192.168.1.100`).
-* **2. DNS:** Burayı boş bırakın veya yine Pi'nin IP'sini yazın. **ASLA** Google DNS vb. yazmayın, yoksa reklamlar oradan kaçar.
+1. **Giriş:** Router arayüzünüze girin (genellikle `192.168.1.1` veya `192.168.0.1`).
 
+2. **LAN / DHCP Ayarları:** **WAN/Internet değil**, “DHCP Server” ayarlarını bulun.
 
-4. **Kaydet ve Başlat:** Modemi yeniden başlatın. Artık evdeki tüm cihazlar otomatik olarak Pi-hole üzerinden geçecektir.
+3. **DNS Ataması:** Birincil (Primary) ve ikincil (Secondary) DNS alanlarını göreceksiniz.
+
+   * **Primary DNS:** Raspberry Pi’nizin statik IP adresini girin (ör. `192.168.1.100`).
+   * **Secondary DNS:** Boş bırakın ya da yine Pi’nin IP adresini girin. **Kesinlikle** buraya Google DNS (`8.8.8.8`) yazmayın; aksi halde reklamlar filtreyi aşar.
+
+4. **Kaydet & Yeniden Başlat:** Tüm cihazların yeni DNS ayarlarını alması için router’ı yeniden başlatın.
 
 ---
+
 
 ## 📱 Cihazlar Nasıl Bağlanır? (İstemci)
 
